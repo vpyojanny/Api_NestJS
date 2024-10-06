@@ -1,0 +1,29 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3307
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: VLsysadmin2024
+      DATABASE_NAME: futbol_amateur
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: VLsysadmin2024
+      MYSQL_DATABASE: futbol_amateur
+      MYSQL_USER: root
+      MYSQL_PASSWORD: VLsysadmin2024
+    ports:
+      - '3307:3307'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
