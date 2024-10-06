@@ -7,7 +7,7 @@ import * as path from 'path';
 export class NotificationsService {
   constructor() {
     // Inicializar Firebase con las credenciales del archivo JSON descargado
-    const serviceAccount = path.resolve(__dirname, 'C:/Users/yojan/OneDrive/Documents/GitHub/Api_NestJS/backend/api-nestjs-clave-firebase.json');
+    const serviceAccount = path.resolve(__dirname, '../api-nestjs-clave-firebase.json');
     
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
